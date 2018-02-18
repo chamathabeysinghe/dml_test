@@ -1,0 +1,13 @@
+fileM = $M
+
+numRowsToPrint = ifdef($rowsToPrint, 2) # default to 2
+numColsToPrint = ifdef($colsToPrint, 2) # default to 2
+
+m = read(fileM)
+
+for (i in 1:numRowsToPrint) {
+    for (j in 1:numColsToPrint) {
+        print('[' + i + ',' + j + ']:' + as.scalar(m[i,j]))
+    }
+}
+
